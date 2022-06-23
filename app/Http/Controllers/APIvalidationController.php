@@ -15,7 +15,7 @@ class APIvalidationController extends Controller
 
         $rules = [
             "name" => "required",
-            "email" => "required | unique:members | ",
+            "email" => "required | unique:members | email",
             "address" => "required"
         ];
 
