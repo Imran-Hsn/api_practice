@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\apiController;
+use App\Http\Controllers\APIvalidationController;
 use App\Http\Controllers\DeleteMemberController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\SearchController;
@@ -38,3 +39,5 @@ Route::put('update', [UpdateMemberController::class, 'update']);
 Route::delete('delete/{id}', [DeleteMemberController::class, 'delete']);
 // Search route
 Route::get('search/{search}', [SearchController::class, 'search']);
+// API validate
+Route::post('save', [APIvalidationController::class, 'dataValidation']);
