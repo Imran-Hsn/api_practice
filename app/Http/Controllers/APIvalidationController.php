@@ -15,7 +15,7 @@ class APIvalidationController extends Controller
 
         $rules = [
             "name" => "required",
-            "email" => "required",
+            "email" => "required | unique:members | ",
             "address" => "required"
         ];
 
@@ -32,10 +32,6 @@ class APIvalidationController extends Controller
         {
             return response()->json($validator->errors(), 422);
         }
-        // else 
-        // {
-        //     return ["Data Added Successfully"];
-        // }
 
         $member = new Member;
         $member->name = $data['name'];
