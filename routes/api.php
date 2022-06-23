@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AddMultipleController;
 use App\Http\Controllers\apiController;
 use App\Http\Controllers\APIvalidationController;
 use App\Http\Controllers\DeleteMemberController;
@@ -41,3 +42,5 @@ Route::delete('delete/{id}', [DeleteMemberController::class, 'delete']);
 Route::get('search/{search}', [SearchController::class, 'search']);
 // API validate
 Route::post('save', [APIvalidationController::class, 'dataValidation']);
+// Add multiple user
+Route::post('add-Multiple', [AddMultipleController::class, 'addMultipleMember']);
